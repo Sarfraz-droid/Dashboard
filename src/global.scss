@@ -1,0 +1,80 @@
+body{
+    margin: 0px;
+}
+
+.App{
+    display: flex;
+    margin-left: 20%;
+}
+
+.Grid{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    table{
+        width: 100%;
+        font-family: 'Montserrat';
+        background-color: rgba(0, 0, 0, 0.075);
+        border: 0px; 
+        td{
+            padding: 20px;
+            border: none;
+        }
+
+        thead{
+            background-color: rgba(51, 51, 51, 0.096);
+        }
+
+        button{
+            border: none;
+            padding: 5px 10px;
+            background-color: #00ADB5;
+            width: 50%;
+            color:white;
+            font-weight: 800;
+            border-radius: 25px;
+            font-family: 'Montserrat';
+        }
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Montserrat';
+        input{
+            width: 30%;
+            margin-top: 1%;
+            padding: 10px;
+            outline: none;
+            border: none;
+
+        }
+
+        button{
+            margin-top: 1%;
+            padding: 5px;
+            border: none;
+            padding: 10px;
+            background-color: #00ADB5;
+            font-family: 'Montserrat';
+            border-radius: 10px;
+            color: white;
+        }
+    }
+
+    h2{
+        font-family: 'Montserrat';
+        text-align: center;
+    }
+
+
+}
+
+.dashboard{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

@@ -1,23 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState,useEffect} from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import "./global.scss"
+
+import Navbar from './components/Navbar'
+import Dashboard from './components/Dashboard'
+import Grid from "./components/Grid"
+import axios from "axios"
 
 function App() {
+  const [Data, setData] = useState([]);
+
+  useEffect( async () => {
+    const info = await axios.get('https://reqres.in/api/users?page=2')
+    setData(info.data.data)
+  },[]);
+
+  useEffect(() => {
+    console.log(Data)
+  },[Data, setData]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Dashboard Data={Data} />
+          </Route>
+          <Route exact path="/grid">
+            <Grid Data={Data} setData={setData}/>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

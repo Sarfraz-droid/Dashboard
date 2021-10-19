@@ -1,0 +1,32 @@
+.navbar {
+  width: 20%;
+  height: 100vh;
+  background-color: #222831;
+  position: fixed;
+  left: 0;
+  color: white;
+  ul {
+    margin: 0px;
+    color: white;
+
+    list-style: none;
+    padding: 20px;
+    li {
+      font-family: "Montserrat";
+      font-weight: 600;
+      margin-top: 5%;
+      padding: 15px;
+
+      a {
+        color: #6b717a;
+        text-decoration: none;
+        font-size: 1.3rem;
+        transition: all 0.6s ease-in-out;
+
+        &:focus{
+            color: white;
+        }
+      }
+    }
+  }
+}
